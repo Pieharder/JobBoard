@@ -1,0 +1,17 @@
+@using JobBoard.Models;
+
+<h1>Job Posting</h1>
+
+@if (Model.Count == 0)
+{
+  <p>There are no job postings yet.</p>
+}
+@foreach (Item item in Model)
+{
+  <h3>@item.Title</h3>
+  <ul>
+    <li>@item.Description</li>
+    <li>@item.Contact</li>
+  </ul>
+}
+<a href="/items/new">Add a new job posting.</a>
